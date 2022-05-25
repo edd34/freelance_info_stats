@@ -32,7 +32,7 @@ username_elem.send_keys(os.getenv("USERNAME"))  # email freelance-info
 password_elem.send_keys(os.getenv("PASSWORD"))  # mot de passe freelance-info
 password_elem.send_keys(Keys.RETURN)
 
-list_keywords = os.getenv(KEYWORDS_SEARCH.split(","))
+list_keywords = os.getenv("KEYWORDS_SEARCH").split(",")
 for keyword in tqdm(list_keywords):
     print(keyword)
     driver.get("https://www.freelance-info.fr/missions?keywords=" + keyword)
