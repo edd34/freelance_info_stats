@@ -33,6 +33,8 @@ password_elem.send_keys(os.getenv("PASSWORD"))  # mot de passe freelance-info
 password_elem.send_keys(Keys.RETURN)
 
 list_keywords = os.getenv("KEYWORDS_SEARCH").split(",")
+current_date = datetime.now().strftime("%Y/%m/%d-%H:%M:%S")
+
 for keyword in tqdm(list_keywords):
     print(keyword)
     driver.get("https://www.freelance-info.fr/missions?keywords=" + keyword)
@@ -50,7 +52,7 @@ for keyword in tqdm(list_keywords):
     print(tmp_disct_region_nb, stats_region)
     db.insert(
         {
-            "date": datetime.now().strftime("%Y/%m/%d-%H:%M:%S"),
+            "date": current_date,
             "techno": keyword,
             "stats": tmp_disct_region_nb,
             "total": sum(
