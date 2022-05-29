@@ -1,4 +1,6 @@
 import os
+from datetime import datetime
+
 from dotenv import load_dotenv
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
@@ -8,7 +10,6 @@ from selenium.webdriver.firefox.options import Options
 from tinydb import TinyDB
 from tqdm import tqdm
 from webdriver_manager.firefox import GeckoDriverManager
-from datetime import datetime
 
 # init
 load_dotenv()
