@@ -25,6 +25,6 @@ df = df.pivot("date", "techno", "total")
 
 sns.set()
 
-res = sns.lineplot(data=df)
+res = sns.lineplot(data=df, markers=True)
 plt.title("Evolution nb techno")
 plt.show()
