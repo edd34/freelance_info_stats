@@ -1,6 +1,6 @@
 # Freelance Info Stats
 
-Missions Finder is a program that use selenium in order to scrap and search freelance missions on various website.
+Allows you to collect statistics on freelance market trends in France
 
 # Configure the virtual environment
 
