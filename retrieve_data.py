@@ -1,12 +1,13 @@
 import os
 from datetime import datetime
 from pprint import pprint
+
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 import seaborn as sns
-from tinydb import Query, TinyDB
 from dotenv import load_dotenv
+from tinydb import Query, TinyDB
 
 load_dotenv()
 
