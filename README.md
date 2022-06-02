@@ -1,4 +1,4 @@
-# Missions Finder
+# Freelance Info Stats
 
 Missions Finder is a program that use selenium in order to scrap and search freelance missions on various website.
 
