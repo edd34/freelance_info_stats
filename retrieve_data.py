@@ -18,6 +18,12 @@ _res = db.search(
     (Language.techno == "amoa")
     | (Language.techno == "python")
     | (Language.techno == "java")
+    | (Language.techno == "chef de projet")
+    | (Language.techno == "supply chain")
+    | (Language.techno == "solidity")
+    | (Language.techno == "power bi")
+    | (Language.techno == "react")
+    | (Language.techno == "vue")
 )
 
 
