@@ -1,4 +1,5 @@
 import os
+from math import floor
 from datetime import datetime
 from pprint import pprint
 
@@ -28,8 +29,19 @@ _res = db.search(
 
 
 df = pd.DataFrame(_res)
-df = df.pivot("date", "techno", "total")
 
+
+def date_to_nb(curr_date):
+    return datetime.strptime(curr_date, "%Y/%m/%d-%H:%M:%S").timetuple().tm_yday
+
+
+def convert_to_nb_week(data):
+    return floor(data / 7)
+
+
+df["date"] = df["date"].apply(date_to_nb)
+df["no_week"] = df["date"].apply(convert_to_nb_week)
+df = df.pivot("date", "techno", "total")
 sns.set()
 
 res = sns.lineplot(data=df, markers=True)
