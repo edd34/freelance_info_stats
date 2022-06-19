@@ -41,7 +41,6 @@ _median = tmp.apply(lambda x: np.round(np.median(x["total"])))
 _first = tmp.first()["total"]
 _last = tmp.last()["total"]
 
-print(tmp.first())
 
 res = pd.concat(
     [
