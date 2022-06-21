@@ -26,12 +26,12 @@ def date_to_nb(curr_date):
     return datetime.strptime(curr_date, "%Y/%m/%d-%H:%M:%S").timetuple().tm_yday
 
 
-def convert_to_nb_week(data):
-    return floor(data / 7)
+def convert_to_nb_week(curr_date):
+    return datetime.strptime(curr_date, "%Y/%m/%d-%H:%M:%S").isocalendar()[1]
 
 
-df["date"] = df["date"].apply(date_to_nb)
 df["no_week"] = df["date"].apply(convert_to_nb_week)
+df["date"] = df["date"].apply(date_to_nb)
 
 tmp = df.groupby(["no_week"])
 _high = tmp.apply(lambda x: np.max(x["total"]))
@@ -56,7 +56,7 @@ res = pd.concat(
 
 
 res.columns = ["high", "low", "open", "close", "mean", "median"]
-res = res.iloc[1:]
+# res = res.iloc[1:]
 print(res)
 
 fig = go.Figure(
